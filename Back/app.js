@@ -1,17 +1,23 @@
-const path = require('path');
-const express = require('express');
-const bodyParser = require("body-parser");
-const routerAll = require('./all.routes');
+import express from 'express';
+import { urlencoded } from 'body-parser';
+import { join } from 'path';
+import router from './routes';
 
-const app = express();
+class App {
+  constructor() {
+    this.server = express();
+    this.middlewares();
+    this.routes();
+  }
+  middlewares() {
+    this.server.set('view engine', 'ejs');
+    this.server.set('views', 'views');
+    this.server.use(urlencoded({ extended: false }));
+    this.server.use(express.static(join(__dirname, 'public')));
+  }
+  routes() {
+    this.server.use(router);
+  }
+}
 
-app.set("view engine", "ejs");
-app.set("views", "views");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(routerAll);
-
-app.listen(3000, ()=> {
-	console.log('Server on port 3000');
-});
+export default new App().server;

@@ -1,11 +1,19 @@
-exports.getIndex = (req, res, next) => {
+class User {
+  getIndex(req, res, next) {
     res.render('index');
-}
-
-exports.getInscricao = (req, res, next) => {
+  }
+  getInscricao(req, res, next) {
     res.render('inscricao');
+  }
+  getContato(req, res, next) {
+    res.render('contato');
+  }
+  getLocal(req, res, next) {
+    res.render('local');
+  }
+  getPlanos(req, res, next) {
+    res.render('plano');
+  }
 }
 
-exports.getContato = (req, res, next) => {
-    res.render('contato');
-}
+export default new User();
