@@ -12,7 +12,7 @@ class User {
     res.render('local');
   }
   getPlanos(req, res, next) {
-    res.render('plano');
+    res.render('planos');
   }
 }
 

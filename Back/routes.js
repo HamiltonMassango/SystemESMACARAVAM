@@ -6,7 +6,7 @@ import userController from './controllers/user';
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-router.get('/inscrever', userController.getInscricao);
+router.get('/inscricao', userController.getInscricao);
 router.get('/contato', userController.getContato);
 router.get('/local', userController.getLocal);
 router.get('/planos', userController.getPlanos);
