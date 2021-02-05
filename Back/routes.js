@@ -12,7 +12,7 @@ router.get('/inscricao', userController.getInscricao);
 router.get('/contato', userController.getContato);
 router.get('/local', userController.getLocal);
 router.get('/planos', userController.getPlanos);
-
+router.post('/plano', countryControllers.cadastrarPlano);
 router.get('/login', authControllers.login);
-router.get('/admin/paises', countryControllers.index);
+router.get('/admin/dashboard', countryControllers.index);
 export default router;

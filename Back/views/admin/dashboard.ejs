@@ -24,51 +24,44 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header bg-m text-white">
-            <h5 class="modal-title">Cadastrar Colaborador</h5>
+            <h5 class="modal-title">Cadastrar Plano</h5>
             <button class="close" data-dismiss="modal">
               <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form
-              method="POST"
-              action="/cordenacao/cadastrar-colaborador"
-              enctype="multipart/form-data"
-            >
+            <form method="POST" action="/plano">
               <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" name="nome" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label for="BI">BI</label>
-                <input type="text" class="form-control" name="bi" required />
+                <label for="detalhes">Detalhes</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="detalhes"
+                  required
+                />
               </div>
 
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label for="file">Escolher foto de Perfil </label>
-                    <input
-                      type="file"
-                      name="photo"
-                      class="form-control-file"
-                      required
-                    />
-                    <small class="form-text text-muted">Nº max 3mb</small>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="file">BI Foto </label>
-                    <input
-                      type="file"
-                      name="photo"
-                      class="form-control-file"
-                      required
-                    />
-                    <small class="form-text text-muted">Nº max 3mb</small>
-                  </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="price"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="tipo"
+                    required
+                  />
                 </div>
               </div>
-              <input type="hidden" name="idCordenador" value="1" />
+
               <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal">
                   Fechar
