@@ -13,7 +13,11 @@ exports.cadastrarPlano = async (req, res) => {
 
 exports.cadastrarLocal = async (req, res) => {
   const { name } = req.body;
-  const files = JSON.stringify(req.files);
+  var files = req.files.reduce((ac, index) => {
+    ac.push(index.filename);
+    return ac;
+  }, []);
+  files = JSON.stringify(files);
   const local = new Local({ name, files });
   await local.save();
   res.redirect('/admin/dashboard');

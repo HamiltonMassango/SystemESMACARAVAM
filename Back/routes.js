@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 });
 router.get('/inscricao/:id', userController.getInscricao);
 router.get('/contato', userController.getContato);
-router.get('/local', userController.getLocal);
+router.get('/local/:id', userController.getLocal);
 router.post(
   '/local',
   upload.array('photo', 6),

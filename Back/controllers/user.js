@@ -16,8 +16,10 @@ class User {
     res.render('contato');
   }
   async getLocal(req, res, next) {
+    const id = req.params.id - 1;
     const locals = await Local.index();
-    res.render('local', { locals });
+
+    res.render('local', { locals, id });
   }
   async getPlanos(req, res, next) {
     const locals = await Local.index();
