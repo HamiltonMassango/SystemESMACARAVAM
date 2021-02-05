@@ -5,15 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .direct {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn-primary.active {
+        color: #1105fe;
+      }
+    </style>
   </head>
   <body>
-    <%- include('includes/nav.ejs') %>
+    <%- include('includes/nav.ejs') %> <%- include('includes/setion.ejs')%>
 
+    <div class="modal fade" id="addUserModalC">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-m text-white">
+            <h5 class="modal-title">Cadastrar Colaborador</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="POST"
+              action="/cordenacao/cadastrar-colaborador"
+              enctype="multipart/form-data"
+            >
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" name="nome" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="BI">BI</label>
+                <input type="text" class="form-control" name="bi" required />
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="file">Escolher foto de Perfil </label>
+                    <input
+                      type="file"
+                      name="photo"
+                      class="form-control-file"
+                      required
+                    />
+                    <small class="form-text text-muted">Nº max 3mb</small>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="file">BI Foto </label>
+                    <input
+                      type="file"
+                      name="photo"
+                      class="form-control-file"
+                      required
+                    />
+                    <small class="form-text text-muted">Nº max 3mb</small>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="idCordenador" value="1" />
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">
+                  Fechar
+                </button>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER MODAL -->
+    <div class="modal fade" id="addUserModalA">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-m text-white">
+            <h5 class="modal-title">Cadastrar Aluno</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="POST"
+              action="/cordenacao/cadastrar"
+              enctype="multipart/form-data"
+            >
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input
+                      type="text"
+                      name="nome"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="bi">Bi</label>
+                    <input
+                      type="text"
+                      name="bi"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="classe">Classe</label>
+                    <select name="classe" class="form-control">
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="sala">Sala</label>
+                    <input
+                      type="number"
+                      name="sala"
+                      id="sala"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="numero">Numero do Aluno</label>
+                    <input
+                      type="number"
+                      name="numero"
+                      id="numero"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="turno">Turno</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="turno"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="file">Escolher foto de Perfil </label>
+                    <input
+                      type="file"
+                      name="photo"
+                      class="form-control-file"
+                      required
+                    />
+                    <small class="form-text text-muted">Nº max 3mb</small>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="file">BI Foto </label>
+                    <input
+                      type="file"
+                      name="photo"
+                      class="form-control-file"
+                      required
+                    />
+                    <small class="form-text text-muted">Nº max 3mb</small>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">
+                  Fechar
+                </button>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="../js/jquery-3.2.1.slim.min.js"
     ></script>
+
+    <script>
+      const tr1 = document.getElementById('tr1');
+      const tr2 = document.getElementById('tr2');
+
+      const alu = document.getElementById('alu');
+      const cola = document.getElementById('cola');
+
+      tr1.addEventListener('click', () => {
+        alu.style.display = 'table-row-group';
+        cola.style.display = 'none';
+
+        tr1.classList.add('active');
+        tr2.classList.remove('active');
+      });
+
+      tr2.addEventListener('click', () => {
+        alu.style.display = 'none';
+        cola.style.display = 'table-row-group';
+
+        tr2.classList.add('active');
+        tr1.classList.remove('active');
+      });
+    </script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>

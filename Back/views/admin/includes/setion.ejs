@@ -1,0 +1,108 @@
+
+        <div class="container-fluid" style="margin-top: 70px;">
+
+          <!-- ACTIONS -->
+            <section id="action" class="py-4 mb-4 bg-light" >
+              <div class="container">
+                <div class="row">
+                  
+                  <div class="col-md-3">
+                    <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addUserModalC">
+                      <i class="fa fa-plus"></i> Cadastra Planos
+                    </a>
+                  </div>
+                  
+                  <div class="col-md-3">
+                    <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addUserModalA">
+                      <i class="fa fa-plus"></i> Cadastra Locais
+                    </a>
+                  </div>
+
+                </div>
+                
+              </div>
+            </section>
+
+          <!-- POSTS -->
+          <section id="posts">
+            <div class="container">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3 direct">
+                  <h6 class="m-0 font-weight-bold text-primary">Cadastrados </h6>
+                  <div class="directC">
+                    
+                    
+                      <a href="#" class="btn btn-primary active" id="tr1" >
+                        <i class="fa fa-user"></i> Lista dos Alunos
+                      </a>
+                      <a href="#" class="btn btn-primary" id="tr2">
+                        <i class="fa fa-users-cog"></i> Lista dos Colaboradores
+                      </a>
+                      
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6 d-flex">
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0"
+                            role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                            <thead>
+                              
+                              <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Função</th>
+                                <th>Data de cadastro</th>
+                                <th></th>
+                              </tr>
+                              </tr>
+                            </thead>
+                            <!--Aluno-->
+                            <tbody id="alu"  style="display: table-row-group">
+                              <tr role="row" class="odd">
+                                <td class="sorting_1">1</td>
+                                <td>Hamilton Silva</td>
+                                <td>Colaborador2 </td>
+
+                                <td>Data </td>
+                                <td><a href="/cordenacao/detalhes-aluno/" class="btn btn-primary">
+                                    <i class="fa fa-angle-double-right"></i> Detalhes
+                                  </a></td>
+                              </tr>
+                              
+                            </tbody>
+                            <!--colaborador-->
+                            
+                            <tbody id="cola" style="display: none;">
+                              <tr role="row" class="odd">
+                                <td class="sorting_1">1</td>
+                                <td>Carlos</td>
+                                <td>Colaborador </td>
+
+                                <td>12/03/2020</td>
+                                <td><a href="/cordenacao/detalhes-aluno/" class="btn btn-primary">
+                                    <i class="fa fa-angle-double-right"></i> Detalhes
+                                  </a></td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                           
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
