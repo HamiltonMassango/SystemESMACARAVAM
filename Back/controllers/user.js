@@ -1,8 +1,9 @@
 import Local from '../model/local';
 import Plano from '../model/planos';
 class User {
-  getIndex(req, res, next) {
-    res.render('index');
+  async getIndex(req, res, next) {
+    const locals = await Local.index();
+    res.render('index', { locals });
   }
   async getInscricao(req, res, next) {
     var planos = req.params.id;
@@ -10,14 +11,18 @@ class User {
     const locals = await Local.index();
     return res.render('inscricao', { locals, plano: planos[0] });
   }
-  getContato(req, res, next) {
+  async getContato(req, res, next) {
+    const locals = await Local.index();
     res.render('contato');
   }
-  getLocal(req, res, next) {
-    res.render('local');
+  async getLocal(req, res, next) {
+    const locals = await Local.index();
+    res.render('local', { locals });
   }
-  getPlanos(req, res, next) {
-    res.render('planos');
+  async getPlanos(req, res, next) {
+    const locals = await Local.index();
+    const planos = await Plano.index();
+    res.render('planos', { planos, locals });
   }
 }
 

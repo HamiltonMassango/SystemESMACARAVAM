@@ -29,9 +29,11 @@
           >Locais</a
         >
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/local">California</a>
-          <a class="dropdown-item" href="/local">Paris</a>
-          <a class="dropdown-item" href="/local">Dublin</a>
+          <% for(local of locals ) { %>
+          <a class="dropdown-item" href="/local/<%- local.id %>"
+            ><%- local.name %></a
+          >
+          <% } %>
         </div>
       </li>
       <li class="nav-item">
