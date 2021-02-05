@@ -20,11 +20,13 @@
         <h1 class="display-4 text-primary">Descubra <%- locals[id].name %></h1>
       </div>
       <div class="row">
-        <div class="col-md">
-          <% for(file of JSON.parse(locals[id].files)) { %>
-          <img class="img-fluid mb-4" src="<%- file %>" alt="Foto 1" />
-          <% } %>
-        </div>
+        <% for(file of JSON.parse(locals[id].files)) { %>
+        <img
+          class="img-fluid mb-4"
+          src="http://localhost:3333/<%- file %>"
+          alt="Foto 1"
+        />
+        <% } %>
       </div>
     </section>
 

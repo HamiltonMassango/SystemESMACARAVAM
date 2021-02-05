@@ -14,6 +14,7 @@ class App {
     this.server.set('views', 'views');
     this.server.use(urlencoded({ extended: false }));
     this.server.use(express.static(join(__dirname, 'public')));
+    this.server.use(express.static(join(__dirname, 'uploads')));
   }
   routes() {
     this.server.use(router);
