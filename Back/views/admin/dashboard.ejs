@@ -79,7 +79,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header bg-m text-white">
-            <h5 class="modal-title">Cadastrar Aluno</h5>
+            <h5 class="modal-title">Cadastrar Local</h5>
             <button class="close" data-dismiss="modal">
               <span>&times;</span>
             </button>
@@ -90,105 +90,24 @@
               action="/cordenacao/cadastrar"
               enctype="multipart/form-data"
             >
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input
-                      type="text"
-                      name="nome"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bi">Bi</label>
-                    <input
-                      type="text"
-                      name="bi"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="classe">Classe</label>
-                    <select name="classe" class="form-control">
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="sala">Sala</label>
-                    <input
-                      type="number"
-                      name="sala"
-                      id="sala"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="numero">Numero do Aluno</label>
-                    <input
-                      type="number"
-                      name="numero"
-                      id="numero"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="turno">Turno</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="turno"
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
               <div class="form-group">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label for="file">Escolher foto de Perfil </label>
+                <label for="name">Nome do Local </label>
+                <input type="text" class="form-control" name="name" required />
+              </div>
+              <a class="btn btn-primary text-white" id="addFoto">Mais Foto</a>
+              <div class="form-group">
+                <div class="col-md-6">
+                  <label for="file">Escolher fotos do Local </label>
+                  <div id="includeFoto">
                     <input
                       type="file"
                       name="photo"
                       class="form-control-file"
                       required
                     />
-                    <small class="form-text text-muted">Nº max 3mb</small>
                   </div>
-                  <div class="col-md-6">
-                    <label for="file">BI Foto </label>
-                    <input
-                      type="file"
-                      name="photo"
-                      class="form-control-file"
-                      required
-                    />
-                    <small class="form-text text-muted">Nº max 3mb</small>
-                  </div>
+
+                  <small class="form-text text-muted">Nº max 3mb</small>
                 </div>
               </div>
               <div class="modal-footer">
@@ -213,6 +132,20 @@
 
       const alu = document.getElementById('alu');
       const cola = document.getElementById('cola');
+
+      const includeFoto = document.getElementById('includeFoto');
+      const addFoto = document.getElementById('addFoto');
+
+      addFoto.addEventListener('click', () => {
+        includeFoto.innerHTML += `
+        <input
+                      type="file"
+                      name="photo"
+                      class="form-control-file"
+                      required
+                    />
+        `;
+      });
 
       tr1.addEventListener('click', () => {
         alu.style.display = 'table-row-group';
