@@ -13,7 +13,7 @@ const upload = multer(configMulter);
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-router.get('/inscricao', userController.getInscricao);
+router.get('/inscricao/:id', userController.getInscricao);
 router.get('/contato', userController.getContato);
 router.get('/local', userController.getLocal);
 router.post(

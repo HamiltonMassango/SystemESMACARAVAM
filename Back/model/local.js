@@ -8,6 +8,9 @@ class Local {
   save() {
     return knex.insert(this).into('local');
   }
+  static index() {
+    return knex.select().from('local');
+  }
 }
 
 export default Local;

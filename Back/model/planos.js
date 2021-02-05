@@ -9,6 +9,9 @@ class Planos {
   save() {
     return knex.insert(this).into('planos');
   }
+  static index() {
+    return knex.select().from('planos');
+  }
 }
 
 export default Planos;

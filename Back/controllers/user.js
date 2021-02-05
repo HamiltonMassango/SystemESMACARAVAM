@@ -1,9 +1,13 @@
+import Local from '../model/local';
+import Plano from '../model/planos';
 class User {
   getIndex(req, res, next) {
     res.render('index');
   }
-  getInscricao(req, res, next) {
-    res.render('inscricao');
+  async getInscricao(req, res, next) {
+    var plano = req.body.params;
+    const local = await Local.index();
+    res.render('inscricao', { local, plano });
   }
   getContato(req, res, next) {
     res.render('contato');
