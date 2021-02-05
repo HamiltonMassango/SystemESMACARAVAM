@@ -20,8 +20,9 @@
         <span class="h6 d-block">PROGRAME A VIAGEM DO SEU SONHO</span>
         <h1 class="display-4 text-primary">INSCREVA-SE</h1>
       </div>
-      <div class="row">
-        <form class="col-lg-6" action="">
+
+      <form class="row" action="">
+        <div class="col-lg-6">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputNome">Nome</label>
@@ -92,7 +93,7 @@
           <button type="submit" class="btn btn-primary btn-lg">
             Contratar Plano
           </button>
-        </form>
+        </div>
 
         <div class="col-lg-5 mx-auto order-first order-lg-1 mb-5">
           <h2 class="h6 text-primary">PLANO ESCOLHIDO</h2>
@@ -106,6 +107,14 @@
               <li>→ Cidade Paris</li>
             </ul>
 
+            <div class="form-group">
+              <select class="form-control bg-light" id="inputCidades">
+                <option>Selecione a cidade</option>
+                <option>California</option>
+                <option>Paris</option>
+                <option>Dublin</option>
+              </select>
+            </div>
             <div class="row mt-4">
               <div class="col">
                 <span class="h4">500.000Kz</span>
@@ -113,7 +122,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </section>
     <%- include('includes/footer.ejs') %>
 
