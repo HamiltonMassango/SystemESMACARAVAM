@@ -1,3 +1,3 @@
 exports.index = (req, res) => {
-  res.render('admin/paises');
+  res.render('admin/dashboard');
 };
