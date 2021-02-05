@@ -5,9 +5,10 @@ class User {
     res.render('index');
   }
   async getInscricao(req, res, next) {
-    var plano = req.body.params;
-    const local = await Local.index();
-    res.render('inscricao', { local, plano });
+    var planos = req.params.id;
+    planos = await Plano.single(planos);
+    const locals = await Local.index();
+    return res.render('inscricao', { locals, plano: planos[0] });
   }
   getContato(req, res, next) {
     res.render('contato');

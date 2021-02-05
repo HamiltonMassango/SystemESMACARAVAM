@@ -98,26 +98,28 @@
         <div class="col-lg-5 mx-auto order-first order-lg-1 mb-5">
           <h2 class="h6 text-primary">PLANO ESCOLHIDO</h2>
           <div class="bg-light rounded p-4 box-shadow">
-            <h2>Gold</h2>
+            <h2><%- plano.tipe %></h2>
+
             <ul class="lista-plano list-unstyled">
-              <li>→ 30 dias de viagem</li>
-              <li>→ 3 destinos diferentes</li>
-              <li>→ Tudo pago pela empresa</li>
-              <li>→ Ingressos para festas</li>
-              <li>→ Cidade Paris</li>
+              <% for(detalhe of plano.detalhes.split(',') ) { %>
+              <li>→ <%- detalhe %></li>
+              <% } %>
             </ul>
 
             <div class="form-group">
-              <select class="form-control bg-light" id="inputCidades">
-                <option>Selecione a cidade</option>
-                <option>California</option>
-                <option>Paris</option>
-                <option>Dublin</option>
+              <select
+                class="form-control bg-light"
+                id="inputCidades"
+                name="localId"
+              >
+                <% for(local of locals ){ %>
+                <option value="<%- local.id %>"><%- local.name %></option>
+                <% } %>
               </select>
             </div>
             <div class="row mt-4">
               <div class="col">
-                <span class="h4">500.000Kz</span>
+                <span class="h4"><%- plano.price %> KZ </span>
               </div>
             </div>
           </div>

@@ -12,6 +12,9 @@ class Planos {
   static index() {
     return knex.select().from('planos');
   }
+  static single(id) {
+    return knex.select().from('planos').whereRaw(`id = "${id}"`);
+  }
 }
 
 export default Planos;
