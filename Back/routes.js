@@ -4,7 +4,7 @@ import multer from 'multer';
 const router = Router();
 import userController from './controllers/user';
 import authControllers from './controllers/auth';
-import countryControllers from './controllers/admin';
+import adminControllers from './controllers/admin';
 import configMulter from './config/multer';
 
 const upload = multer(configMulter);
@@ -19,10 +19,10 @@ router.get('/local/:id', userController.getLocal);
 router.post(
   '/local',
   upload.array('photo', 6),
-  countryControllers.cadastrarLocal
+  adminControllers.cadastrarLocal
 );
 router.get('/planos', userController.getPlanos);
-router.post('/plano', countryControllers.cadastrarPlano);
+router.post('/plano', adminControllers.cadastrarPlano);
 router.get('/login', authControllers.login);
-router.get('/admin/dashboard', countryControllers.index);
+router.get('/admin/dashboard', adminControllers.index);
 export default router;
