@@ -5,6 +5,10 @@ class User {
     const locals = await Local.index();
     res.render('index', { locals });
   }
+  async create(req, res, next) {
+    console.log(req.body);
+  }
+
   async getInscricao(req, res, next) {
     var planos = req.params.id;
     planos = await Plano.single(planos);
