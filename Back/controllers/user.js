@@ -13,7 +13,7 @@ class User {
   }
   async getContato(req, res, next) {
     const locals = await Local.index();
-    res.render('contato');
+    res.render('contato', { locals });
   }
   async getLocal(req, res, next) {
     const id = req.params.id - 1;

@@ -10,9 +10,7 @@ import configMulter from './config/multer';
 const upload = multer(configMulter);
 // Pagina Pricipal
 
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+router.get('/', userController.getIndex);
 router.get('/inscricao/:id', userController.getInscricao);
 router.get('/contato', userController.getContato);
 router.get('/local/:id', userController.getLocal);
