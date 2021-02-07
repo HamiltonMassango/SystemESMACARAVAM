@@ -24,4 +24,6 @@ router.get('/planos', userController.getPlanos);
 router.post('/plano', adminControllers.cadastrarPlano);
 router.get('/login', authControllers.login);
 router.get('/admin/dashboard', adminControllers.index);
+router.get('/bilhete/:id', userController.getBilhete);
+
 export default router;
