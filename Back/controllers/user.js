@@ -61,8 +61,7 @@ class User {
   }
   async getBilhete(req, res, next) {
     const bilhet = await Bilhetes.index(1);
-    console.log(bilhet);
-    res.render('bilhete');
+    res.render('bilhete', { bilhete: bilhet[0] });
   }
 }
 

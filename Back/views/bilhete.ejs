@@ -18,20 +18,26 @@
         <i class="fas fa-plane"></i>
       </div>
       <div class="ticket-body">
-        <h2>BILHETE ESMACARAM</h2>
+        <h2>BILHETE ESMACARAVAN</h2>
 
         <div class="ticket-info">
-          <img src="http://localhost:3333/img/723928.jpg" alt="foto user" />
+          <img
+            src="http://localhost:3333/<%- bilhete.avatar %>"
+            alt="foto user"
+          />
           <div class="data">
-            <p class="display-4">COD 12345678</p>
+            <p class="display-4">COD <%- bilhete.codigo %></p>
             <div class="mt-3">
-              <h5><strong>Nome: </strong>Hamilton silva</h5>
-              <h5><strong>Plano: </strong>Gold</h5>
-              <h5><strong>Destino: </strong> Luanda</h5>
+              <h5><strong>Nome: </strong><%- bilhete.name %></h5>
+              <h5><strong>Plano: </strong><%- bilhete.tipe %></h5>
+              <h5><strong>Destino: </strong><%- bilhete.localName %></h5>
             </div>
           </div>
         </div>
-        <p class="date"><strong>Data de emissão : </strong>12/02/2021</p>
+        <p class="date">
+          <strong>Data de emissão : </strong><%- new Date
+          (bilhete.datatimes).toLocaleDateString() %>
+        </p>
       </div>
     </div>
   </body>
