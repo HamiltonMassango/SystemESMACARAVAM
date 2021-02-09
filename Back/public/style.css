@@ -1,63 +1,63 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 body {
-  max-width: 900px;
-  margin: 60px auto;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 900px !important;
+  margin: 60px auto !important;
+  background-color: #eee !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .ticket {
-  display: flex;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  background-color: #fff;
-  max-width: 695px;
-  width: 1400px;
-  box-shadow: 2px 0.8rem 1rem #007bff93;
+  display: flex !important;
+  border: 1px solid #007bff !important;
+  border-radius: 4px !important;
+  background-color: #fff !important;
+  max-width: 995px !important;
+  width: 1400px !important;
+  box-shadow: 2px 0.8rem 1rem #007bff93 !important;
 }
 
 .plane {
-  border-right: 1px solid #007bff;
-  display: flex;
-  background-color: #007bff;
-  justify-content: center;
-  align-items: center;
+  border-right: 1px solid #007bff !important;
+  display: flex !important;
+  background-color: #007bff !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .plane .fas {
-  font-size: 8em;
-  padding: 30px;
-  color: #ffffff;
-  transform: rotate(-90deg);
+  font-size: 8em !important;
+  padding: 30px !important;
+  color: #ffffff !important;
+  transform: rotate(-90deg) !important;
 }
 
 .ticket-info {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  padding: 30px !important;
+  justify-content: center !important;
 }
 
 .ticket-body h1,
 h2 {
-  color: #007bff;
-  margin-top: 18px;
-  text-align: center;
+  color: #007bff !important;
+  margin-top: 18px !important;
+  text-align: center !important;
 }
 
 .ticket-body .date {
-  text-align: right;
+  text-align: right !important;
 }
 
 .ticket-info img {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  margin-right: 50px;
+  width: 10rem !important;
+  height: 10rem !important;
+  border-radius: 50% !important;
+  margin-right: 50px !important;
 }
