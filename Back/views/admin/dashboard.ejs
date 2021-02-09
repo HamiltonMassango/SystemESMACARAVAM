@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
     <link
       rel="stylesheet"
       href="http://localhost:3333/fontawesome-free/css/all.min.css"
@@ -87,15 +88,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="POST" action="/plano">
+            <form method="POST" action="/bilhete">
               <div class="form-group">
                 <label for="detalhes"> Codigo do Bilhete </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="detalhes"
-                  required
-                />
+                <input type="text" class="form-control" name="cod" required />
               </div>
               <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal">
@@ -153,6 +149,42 @@
         </div>
       </div>
     </div>
+    <!-- Check MODAL -->
+    <div class="modal fade widt" id="CheckModalV">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content heig">
+          <div class="modal-header text-white">
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="chek">
+              <h3 class="display-4 text-primary">Bilhete valido !</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade widt" id="CheckModalI">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content heig">
+          <div class="modal-header text-white">
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="chek">
+              <h3 class="display-4 text-danger">
+                Codigo bilhete Inserido invalido !
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="../js/jquery-3.2.1.slim.min.js"
@@ -198,5 +230,10 @@
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>
+    <% if (true) { %>
+    <script>
+      $('#CheckModal').modal('show');
+    </script>
+    <% } %>
   </body>
 </html>

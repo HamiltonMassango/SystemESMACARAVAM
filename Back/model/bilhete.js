@@ -25,6 +25,9 @@ class Bilhete {
       .innerJoin('local', 'local.id', 'bilhete.idLocal')
       .where('bilhete.id', id);
   }
+  static validar(cod) {
+    return knex.select().from('bilhete').where('codigo', cod);
+  }
 }
 
 export default Bilhete;

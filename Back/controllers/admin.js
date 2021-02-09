@@ -1,5 +1,6 @@
 import Plano from '../model/planos';
 import Local from '../model/local';
+import Bilhete from '../model/bilhete';
 
 exports.index = (req, res) => {
   res.render('admin/dashboard');
@@ -22,3 +23,12 @@ exports.cadastrarLocal = async (req, res) => {
   await local.save();
   res.redirect('/admin/dashboard');
 };
+
+exports.validarBilhete = async (req, res) => {
+  const { cod } = req.body;
+  const result = await Bilhete.validar(cod);
+  console.log(cod, result);
+};
+
+// req.flash('error')
+// req.flash('error', 'Email ou senha não existente ! ');
