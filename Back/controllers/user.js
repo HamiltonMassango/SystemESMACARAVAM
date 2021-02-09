@@ -1,13 +1,24 @@
 import Local from '../model/local';
 import Plano from '../model/planos';
 import Users from '../model/user';
+import Bilhetes from '../model/bilhete';
+import crypto from 'crypto';
 class User {
   async getIndex(req, res, next) {
     const locals = await Local.index();
     res.render('index', { locals });
   }
   async create(req, res, next) {
-    const { name, bi, email, senha, endereco, numeroCartao } = req.body;
+    const {
+      name,
+      bi,
+      email,
+      senha,
+      endereco,
+      numeroCartao,
+      plano,
+      localId,
+    } = req.body;
     const { filename } = req.file;
 
     const user = new Users(
@@ -20,8 +31,11 @@ class User {
       filename
     );
     var dados = await user.save();
-
-    res.redirect('/bilhete/1');
+    crypto.randomBytes(4, async (err, res) => {
+      const bilhete = new Bilhete(res.toString('hex'), dados, plano, localId);
+      dados = await bilhete.save();
+      res.redirect(`/bilhete/${dados}`);
+    });
   }
 
   async getInscricao(req, res, next) {
@@ -46,6 +60,8 @@ class User {
     res.render('planos', { planos, locals });
   }
   async getBilhete(req, res, next) {
+    const bilhet = await Bilhetes.index(1);
+    console.log(bilhet);
     res.render('bilhete');
   }
 }
