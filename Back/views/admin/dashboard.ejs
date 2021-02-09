@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="http://localhost:3333/fontawesome-free/css/all.min.css"
+    />
     <style>
       .direct {
         display: flex;
@@ -74,6 +78,38 @@
       </div>
     </div>
 
+    <div class="modal fade" id="addUserModalD">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-m text-white">
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/plano">
+              <div class="form-group">
+                <label for="detalhes"> Codigo do Bilhete </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="detalhes"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">
+                  Fechar
+                </button>
+                <button class="btn btn-primary" type="submit">
+                  Validar Bilhete
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- USER MODAL -->
     <div class="modal fade" id="addUserModalA">
       <div class="modal-dialog modal-lg">
