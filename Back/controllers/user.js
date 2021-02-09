@@ -31,10 +31,11 @@ class User {
       filename
     );
     var dados = await user.save();
+    const resp = res;
     crypto.randomBytes(4, async (err, res) => {
-      const bilhete = new Bilhete(res.toString('hex'), dados, plano, localId);
+      const bilhete = new Bilhetes(res.toString('hex'), dados, plano, localId);
       dados = await bilhete.save();
-      res.redirect(`/bilhete/${dados}`);
+      resp.redirect(`/bilhete/${dados}`);
     });
   }
 
@@ -60,7 +61,8 @@ class User {
     res.render('planos', { planos, locals });
   }
   async getBilhete(req, res, next) {
-    const bilhet = await Bilhetes.index(1);
+    const id = req.params.id;
+    const bilhet = await Bilhetes.index(id);
     res.render('bilhete', { bilhete: bilhet[0] });
   }
 }
