@@ -1,23 +1,27 @@
 import Local from '../model/local';
 import Plano from '../model/planos';
-// import User from '../model/user';
+import Users from '../model/user';
 class User {
   async getIndex(req, res, next) {
     const locals = await Local.index();
     res.render('index', { locals });
   }
   async create(req, res, next) {
-    const { name, bi, email, senha, endereco, numeroCartao, avatar } = req.body;
-    const user = new User({
+    const { name, bi, email, senha, endereco, numeroCartao } = req.body;
+    const { filename } = req.file;
+
+    const user = new Users(
       name,
       bi,
       email,
       senha,
       endereco,
       numeroCartao,
-      avatar,
-    });
-    await user.save;
+      filename
+    );
+    var dados = await user.save();
+
+    res.redirect('/bilhete/1');
   }
 
   async getInscricao(req, res, next) {

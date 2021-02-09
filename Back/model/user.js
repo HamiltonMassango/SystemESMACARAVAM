@@ -1,7 +1,7 @@
 import knex from '../config/database';
 
 class Users {
-  constructor({ name, bi, email, senha, endereco, numeroCartao, avatar }) {
+  constructor(name, bi, email, senha, endereco, numeroCartao, avatar) {
     this.name = name;
     this.bi = bi;
     this.email = email;
